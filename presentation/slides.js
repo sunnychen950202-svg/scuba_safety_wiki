@@ -7,9 +7,11 @@ let current = 0;
 function showSlide(index) {
   if (index < 0 || index >= slides.length) return;
 
+  document.body.dataset.direction = index > current ? 'forward' : 'backward';
   slides[current].hidden = true;
   current = index;
   slides[current].hidden = false;
+  document.body.dataset.slide = String(current + 1);
   progress.textContent = `${current + 1} / ${slides.length}`;
   previous.disabled = current === 0;
   next.disabled = current === slides.length - 1;
@@ -38,3 +40,30 @@ for (const question of document.querySelectorAll('.questions fieldset')) {
     feedback.textContent = `${correct ? '答對了！' : '這題答錯了。'}${question.dataset.explanation}`;
   });
 }
+
+const depth = document.querySelector('#depth');
+const reading = document.querySelector('#reading');
+const marker = document.querySelector('#depth-marker');
+
+function updateDepth() {
+  const meters = Number(depth.value);
+  const atmosphere = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 1 });
+  reading.textContent = `${meters} 公尺 · 約 ${atmosphere.format(1 + meters / 10)} 大氣壓`;
+  depth.setAttribute('aria-valuetext', reading.textContent);
+  marker.style.setProperty('--depth', `${100 * meters / Number(depth.max)}%`);
+}
+
+depth.addEventListener('input', updateDepth);
+updateDepth();
+
+const checklist = document.querySelector('#buddy-check');
+const checks = Array.from(checklist.querySelectorAll('input[type="checkbox"]'));
+const checkCount = document.querySelector('#check-count');
+
+function updateChecklist() {
+  checkCount.textContent = `已勾選 ${checks.filter(box => box.checked).length} / ${checks.length}`;
+}
+
+checklist.addEventListener('change', updateChecklist);
+checklist.addEventListener('reset', () => requestAnimationFrame(updateChecklist));
+updateChecklist();
