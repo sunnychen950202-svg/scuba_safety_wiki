@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新手潛水安全</title>
+<link rel="stylesheet" href="style.css">
+<script src="slides.js" defer></script>
+</head>
+<body data-slide="1">
+<div class="deck">
+<header class="masthead"><span class="brand"><span aria-hidden="true">≈</span> Scuba Safety Wiki</span><span>水肺潛水入門</span></header>
+<main>
+<section class="slide cover" aria-labelledby="cover">
+  <div class="hero"><div>
+    <h1 id="cover" tabindex="-1">新手<br>潛水安全</h1>
+    <p class="lead">認識水肺與裝備、理解水下壓力，掌握入水前到出水後的安全觀念。</p>
+    <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/index.md">Wiki 學習索引</a>
+  </div>
+  <figure class="photo"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NOAA_diver_American_Samoa_2023.jpg">NOAA Fisheries / Joao Garriques</a></figcaption></figure>
+  </div>
+</section>
+<section class="slide" hidden aria-labelledby="compare">
+  <h2 id="compare" tabindex="-1">水肺潛水與浮潛</h2>
+  <div class="cards two">
+    <article><span class="icon" aria-hidden="true">01</span><h3>浮潛</h3><p>在水面用呼吸管吸入空氣。</p></article>
+    <article><span class="icon" aria-hidden="true">02</span><h3>水肺潛水</h3><p>帶著氣瓶，透過調節器在水下呼吸。</p></article>
+  </div>
+  <p class="note">水肺潛水需要理論與水中訓練。請在受訓範圍內，與受過訓練的潛伴同行。</p>
+  <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/scuba-vs-snorkeling.md">Wiki · 水肺潛水與浮潛差異</a>
+</section>
+<section class="slide" hidden aria-labelledby="pressure">
+  <h2 id="pressure" tabindex="-1">越深，水壓越大</h2>
+  <div class="depth-demo">
+    <div class="depth-water" aria-hidden="true"><span>水面</span><i id="depth-marker"></i><span>30 公尺</span></div>
+    <div>
+      <label for="depth">模擬海水深度</label>
+      <input id="depth" type="range" min="0" max="30" value="10">
+      <output id="reading" class="reading" for="depth">10 公尺 · 約 2 大氣壓</output>
+      <p>以水面約 1 大氣壓估算。每加深約 10 公尺，環境壓力增加約 1 大氣壓。</p>
+    </div>
+  </div>
+  <ul class="steps">
+    <li>下潛時及早、頻繁、輕柔地平衡中耳與外界壓力。</li>
+    <li>無法平壓時停下，必要時略升再試。仍無法平壓就結束潛水，避免硬做。</li>
+    <li>若耳痛、眩暈或突然聽力下降，結束潛水。症狀持續則先就醫，暫停潛水。</li>
+  </ul>
+  <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/pressure-equalization.md">Wiki · 水下壓力與耳壓平衡</a>
+</section>
+<section class="slide" hidden aria-labelledby="gear">
+  <h2 id="gear" tabindex="-1">潛水裝備各有用途</h2>
+  <div class="cards three gear">
+    <details><summary>氣瓶與調節器</summary><p>氣瓶供氣，調節器讓你在水下呼吸。入水前確認瓶閥開啟與瓶壓充足，依訓練測試主用與備用調節器。</p></details>
+    <details><summary>BCD 與配重</summary><p>浮力調整裝置（BCD）和配重用來調整浮力。互檢時測試充排氣、確認配重固定，並確認如何快卸。</p></details>
+    <details><summary>壓力表與潛水電腦</summary><p>用壓力表或具供氣監測功能的電腦查看瓶壓。測試調節器時同時觀察瓶壓。</p></details>
+  </div>
+  <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/gear-buddy-check.md">Wiki · 潛水裝備與潛伴檢查</a>
+</section>
+<section class="slide" hidden aria-labelledby="buddy">
+  <h2 id="buddy" tabindex="-1">每次入水前，與潛伴互檢</h2>
+  <p>開放式水肺裝備的 BWRAF，包括同日後續每一潛。</p>
+  <form class="checklist" id="buddy-check">
+    <label><input type="checkbox"><strong><b>B</b> 浮力</strong><span>確認 BCD 連接，測試充氣與排氣。</span></label>
+    <label><input type="checkbox"><strong><b>W</b> 配重</strong><span>確認固定，彼此知道如何快卸。</span></label>
+    <label><input type="checkbox"><strong><b>R</b> 扣具</strong><span>確認束帶、扣具牢固，彼此知道如何解開。</span></label>
+    <label><input type="checkbox"><strong><b>A</b> 供氣</strong><span>確認瓶閥開啟和瓶壓充足。依訓練測試主用與備用調節器、觀察瓶壓，並確認備用調節器的位置。</span></label>
+    <label><input type="checkbox"><strong><b>F</b> 最後確認</strong><span>整理管線，確認裝備齊備，彼此確認可以入水。</span></label>
+    <div class="check-actions"><output id="check-count" aria-live="polite">已勾選 0 / 5</output><button type="reset">重設清單</button></div>
+  </form>
+  <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/gear-buddy-check.md">Wiki · 潛水裝備與潛伴檢查</a>
+</section>
+<section class="slide" hidden aria-labelledby="ascent">
+  <h2 id="ascent" tabindex="-1">減壓症與安全上升</h2>
+  <div class="scenario">
+    <details open><summary>規劃潛水 · 認識減壓症</summary><p>減壓時，溶於組織的惰性氣體可能形成氣泡。深度、時間與上升速率都會影響風險。在訓練範圍及電腦或潛水表的免減壓限制內規劃，預留上升與停留用的氣量和時間。</p></details>
+    <details><summary>上升途中 · 呼吸與停留</summary><p>保持正常呼吸，控制速度，監看潛水電腦並留意潛伴。PADI 的休閒安全停留做法為約 <strong>5 公尺、3 分鐘</strong>。某些潛水剖面另有必要減壓停留。</p></details>
+    <details><summary>出水後 · 發現異常症狀</summary><p>有異常關節痛、麻木、無力或呼吸困難，應儘速就醫評估。</p></details>
+  </div>
+  <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/decompression-ascent.md">Wiki · 減壓症與安全上升</a>
+</section>
+<section class="slide" hidden aria-labelledby="flight">
+  <h2 id="flight" tabindex="-1">潛水後，多久能搭機？</h2>
+  <p>從最後一潛浮出水面開始算。太早搭機或前往高海拔會增加減壓症風險，等待有助降低風險。</p>
+  <div class="scenario">
+    <details open><summary>單次免減壓潛水</summary><p><strong>DAN World 與 CDC</strong> 均建議至少 12 小時。</p></details>
+    <details><summary>重複或多日潛水</summary><p><strong>DAN World</strong> 多日重複潛水至少 18 小時。<br><strong>CDC</strong> 多次潛水或多日潛水至少 18 小時。</p></details>
+    <details><summary>需強制減壓停留</summary><p><strong>DAN World</strong> 遠超過 18 小時（同條也涵蓋 heliox 或 trimix）。<br><strong>CDC</strong> 24–48 小時。</p></details>
+  </div>
+  <p class="note">疑似減壓疾病時，先就醫評估，暫緩飛行或前往高海拔。</p>
+  <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/flying-after-diving.md">Wiki · 潛水後搭機間隔</a>
+</section>
+<section class="slide" hidden aria-labelledby="quiz">
+  <h2 id="quiz" tabindex="-1">三題安全情境</h2>
+  <div class="questions">
+    <fieldset data-answer="stop" data-explanation="先停止下潛，必要時略升再試。仍無法平壓就結束潛水。">
+      <legend>1. 下潛時無法平壓，先怎麼做？</legend>
+      <label><input type="radio" name="ears" value="stop"> 先停止下潛</label>
+      <label><input type="radio" name="ears" value="go"> 繼續下潛</label>
+      <p class="feedback" aria-live="polite"></p>
+      <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/pressure-equalization.md">Wiki · 耳壓平衡</a>
+    </fieldset>
+    <fieldset data-answer="every" data-explanation="每次入水前都要互檢，同日的後續潛水也算。">
+      <legend>2. 今天第二次下水，何時互檢？</legend>
+      <label><input type="radio" name="buddy" value="first"> 第一次檢查過即可</label>
+      <label><input type="radio" name="buddy" value="every"> 這次入水前再檢查</label>
+      <p class="feedback" aria-live="polite"></p>
+      <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/gear-buddy-check.md">Wiki · 潛伴檢查</a>
+    </fieldset>
+    <fieldset data-answer="12" data-explanation="DAN World 與 CDC 都建議單次免減壓潛水後至少等 12 小時。若有疑似症狀，先就醫並暫緩搭機。">
+      <legend>3. 無疑似減壓疾病症狀，單次免減壓潛水後至少等多久再搭機？</legend>
+      <label><input type="radio" name="flight" value="6"> 6 小時</label>
+      <label><input type="radio" name="flight" value="12"> 12 小時</label>
+      <p class="feedback" aria-live="polite"></p>
+      <a class="source" href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/flying-after-diving.md">Wiki · 搭機間隔</a>
+    </fieldset>
+  </div>
+</section>
+<section class="slide" hidden aria-labelledby="review">
+  <h2 id="review" tabindex="-1">從入水前記到出水後</h2>
+  <ol class="steps">
+    <li><strong>入水前</strong> 在受訓範圍內潛水，每次都與潛伴互檢。</li>
+    <li><strong>水中</strong> 及早、輕柔平壓，上升時正常呼吸並控制速度。</li>
+    <li><strong>出水後</strong> 依潛水情況安排搭機，有疑似減壓疾病症狀先就醫。</li>
+  </ol>
+  <h3>參考資料</h3>
+  <ul class="references">
+    <li><a href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/index.md">Wiki 索引</a></li>
+    <li><a href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/scuba-vs-snorkeling.md">水肺與浮潛</a></li>
+    <li><a href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/pressure-equalization.md">水壓與耳壓</a></li>
+    <li><a href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/gear-buddy-check.md">裝備與潛伴</a></li>
+    <li><a href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/decompression-ascent.md">減壓與上升</a></li>
+    <li><a href="https://github.com/sunnychen950202-svg/scuba_safety_wiki/blob/main/wiki/flying-after-diving.md">搭機間隔</a></li>
+  </ul>
+  <details class="credits"><summary>攝影來源與授權</summary>
+    <p>美屬薩摩亞潛水員，NOAA Fisheries / Joao Garriques。關島珊瑚礁潛水員，David Burdick / NOAA。兩張均由 Wikimedia Commons 標示為美國政府作品、公有領域。畫面有裁切與色調疊加。</p>
+    <a href="https://commons.wikimedia.org/wiki/File:NOAA_diver_American_Samoa_2023.jpg">美屬薩摩亞照片</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:SCUBA_divers_approaching_a_sinkhole_on_a_Guamanian_reef_(reef317083434).jpg">關島照片</a>
+  </details>
+</section>
+</main>
+<nav class="controls" aria-label="投影片切換">
+  <button type="button" id="previous" disabled aria-label="上一頁"><span aria-hidden="true">←</span> 上一頁</button>
+  <output id="progress" aria-live="polite">1 / 9</output>
+  <button type="button" id="next" aria-label="下一頁">下一頁 <span aria-hidden="true">→</span></button>
+</nav>
+</div>
+</body>
+</html>
